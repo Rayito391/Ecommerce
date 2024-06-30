@@ -1,8 +1,17 @@
+import { useState,useEffect } from "react";
+import Layout from "../../Components/Layout";
+import Card from "../../Components/Card";
+
 function Home() {
+    // const [products,setProducts] = useState(null)
+    // useEffect(()=>{
+    //   fetch('https://api.escuelajs.co/api/v1/products').then(response => console.log(response.json()))
+    // }, [])
     return (
-        <div className='bg-red-600'>
-          <h1>Hello world</h1>
-        </div>
+        <Layout>
+          Home
+          <Card/>
+        </Layout>
     )
   }
 
