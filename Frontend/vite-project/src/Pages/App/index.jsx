@@ -3,6 +3,7 @@
 import { useRoutes, BrowserRouter } from "react-router-dom"; 
 
 // Pages
+import { ShoppingProvider } from "../../Context";
 import Home from '../Home/';
 import MyAccount from "../MyAccount";
 import MyOrders from "../MyOrders";
@@ -31,10 +32,12 @@ const AppRoutes = ()=>{
 
 const App = () => {
   return (
-      <BrowserRouter>
-          <AppRoutes></AppRoutes>
-          <Navbar></Navbar>
-      </BrowserRouter>
+      <ShoppingProvider>
+        <BrowserRouter>
+            <AppRoutes></AppRoutes>
+            <Navbar></Navbar>
+        </BrowserRouter>
+      </ShoppingProvider>
   )
 }
 export default App
