@@ -9,6 +9,7 @@ import MyAccount from "../MyAccount";
 import MyOrders from "../MyOrders";
 import NotFound from "../NotFound";
 import SignIn from "../SignIn";
+import CheckoutSideMenu from "../../Components/CheckoutSideMenu";
 
 //Components
 import Navbar from "../../Components/Navbar";
@@ -34,8 +35,9 @@ const App = () => {
   return (
       <ShoppingProvider>
         <BrowserRouter>
-            <AppRoutes></AppRoutes>
-            <Navbar></Navbar>
+            <AppRoutes />
+            <Navbar />
+            <CheckoutSideMenu />
         </BrowserRouter>
       </ShoppingProvider>
   )
