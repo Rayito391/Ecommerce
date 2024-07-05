@@ -4,8 +4,16 @@ const Card = (data) =>{
     const context = useContext(ShoppingContext);
 
     const showProduct = (productDetail) =>{
+        context.CloseCheckout()
         context.OpenProductDetail(),
         context.setProductToShow(productDetail)
+    }
+    const addProduct = (event, productData) => {
+        event.stopPropagation()
+        context.setCount(context.count + 1)
+        context.setShoppingCar([...context.ShoppingCar,productData])
+        context.CloseProductDetail()
+        context.OpenCheckout()
     }
     return(
         <article className="bg-white cursor-pointer w-56 h-60 rounded-lg"
@@ -15,7 +23,7 @@ const Card = (data) =>{
                 <img className='w-full h-full object-cover rounded-lg' src={data.data.images[0]} alt="description" />
                 <div 
                     className="absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1"
-                    onClick={()=>context.setCount(context.count + 1)}>
+                    onClick={(event) => addProduct(event, data.data)}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                     </svg>
