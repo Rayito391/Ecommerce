@@ -1,8 +1,10 @@
 import './style.css'
 import { ShoppingContext } from "../../Context";
 import { useContext } from 'react';
+import OrderCard from '../../Components/OrderCards';
 const CheckoutSideMenu = () =>{
     const context = useContext(ShoppingContext)
+    console.log(context.ShoppingCar)
     return(
         <aside className={`${context.checkoutOpen ? 'flex' : 'hidden'} checkout-side-menu flex flex-col fixed  top-20 right-0 border border-black rounded-lg bg-white`}>
             <div className='flex justify-between items-center p-6'>
@@ -12,6 +14,18 @@ const CheckoutSideMenu = () =>{
                     <path strokeLinecap="round" strokeLinejoin="round" d="m15 15 6-6m0 0-6-6m6 6H9a6 6 0 0 0 0 12h3" />
                     </svg>
                 </div>
+            </div>
+            <div className='px-6 overflow-y-scroll'>
+                {
+                    context.ShoppingCar.map(product => (
+                        <OrderCard
+                            key={product.id}
+                            title={product.title}
+                            imageURL={product.images}
+                            price={product.price}
+                        />
+                    ))
+                }
             </div>
         </aside>
     )
