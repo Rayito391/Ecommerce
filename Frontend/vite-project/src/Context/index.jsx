@@ -24,6 +24,9 @@ export const ShoppingProvider = ({children}) => {
     const OpenCheckout = () => setCheckoutOpen(true);
     const CloseCheckout = () => setCheckoutOpen(false);
 
+    //Order
+    const [order,setOrder] = useState([]);
+
     return(
         <ShoppingContext.Provider value={
             {
@@ -38,7 +41,9 @@ export const ShoppingProvider = ({children}) => {
                 setShoppingCar,
                 OpenCheckout,
                 CloseCheckout,
-                checkoutOpen
+                checkoutOpen,
+                order,
+                setOrder
             }
             }>
             {children}
