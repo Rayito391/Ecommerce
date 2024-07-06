@@ -7,6 +7,7 @@ import { ShoppingProvider } from "../../Context";
 import Home from '../Home/';
 import MyAccount from "../MyAccount";
 import MyOrders from "../MyOrders";
+import MyOrder from "../MyOrder";
 import NotFound from "../NotFound";
 import SignIn from "../SignIn";
 import CheckoutSideMenu from "../../Components/CheckoutSideMenu";
@@ -24,7 +25,9 @@ const AppRoutes = ()=>{
   let routes = useRoutes([
     {path:'/', element:<Home/> }, //Estructura para optimizar codigo
     {path:'/myaccount', element:<MyAccount/> },
+    {path:'/myorder', element:<MyOrder/> },
     {path:'/myorders', element:<MyOrders/> },
+    {path:'/myorders/last', element:<MyOrder/> },
     {path:'/*', element:<NotFound/> },
     {path:'/signin', element:<SignIn/> }
   ])
