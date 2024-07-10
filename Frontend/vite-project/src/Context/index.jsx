@@ -76,7 +76,6 @@ export const ShoppingProvider = ({children}) => {
                 setSearchByTitle,
                 setFilteredItems,
                 filteredItems
-
             }
             }>
             {children}
