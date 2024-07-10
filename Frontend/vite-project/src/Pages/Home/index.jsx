@@ -6,8 +6,8 @@ import { ShoppingContext } from "../../Context";
 
 function Home() {
     const context = useContext(ShoppingContext)
+    
     const renderView = () => {
-      if(context.searchByTitle?.length > 0){
           if(context.filteredItems?.length > 0){
             return (
               context.filteredItems?.map(item => (
@@ -19,20 +19,11 @@ function Home() {
             )
           }else{
             return (
-              <div className='flex font-bold text-3xl'> We don't have anything :C</div>
+              //className='flex font-bold text-3xl'
+              <div> We don't have anything :C</div>
             )
           }
-      }else{
-        return(
-          context.items?.map(item => (
-            <Card
-              key={item.id}
-              data={item}
-            />
-          ))
-        )
       }
-    }
 
 
     return (
@@ -45,7 +36,8 @@ function Home() {
             </div>
             <input 
             type="text" 
-            placeholder="Search a Product" 
+            placeholder="Search a Product"
+            value={context.SearchByTitle = null}
             className='ml-2 rounded-lg border p-4 mb-4 border-black w-96 focus:outline-none'
             onChange={(event)=> context.setSearchByTitle(event.target.value)}/>
           </div>
@@ -55,6 +47,5 @@ function Home() {
           <ProductDetail/>
         </Layout>
     )
-  }
-
+}
 export default Home;

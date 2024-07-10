@@ -24,7 +24,7 @@ const CheckoutSideMenu = () =>{
         }
         context.setOrder([...context.order,orderToAdd])
         context.setShoppingCar([])
-        context.setCount(context.count = 0)
+        context.setSearchByTitle(null)
         context.CloseCheckout()
     }
 
