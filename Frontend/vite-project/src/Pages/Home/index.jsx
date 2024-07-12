@@ -20,7 +20,7 @@ function Home() {
           }else{
             return (
               //className='flex font-bold text-3xl'
-              <div> We don't have anything :C</div>
+              <div className='font-bold text-3xl'><img className='absolute ml-80 mt-20' src="https://grupoleiros.com/static/product-not-found.png" alt="" /></div>
             )
           }
       }
